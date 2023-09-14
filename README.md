@@ -12,8 +12,8 @@ Dann im nächsten Schritt Erst oben in der Werkzeugleiste auf Export und danach 
 ### OSM-Datei kopieren
 Als nächstes die heruntergeladene OSM-Datei in den convert-Ordner kopieren. Ich empfehle außerdem, die Datei mit einem aussagekräftigen Namen zu versehen.
 
-###
-
+### execute.bat ausführen
+Zum konvertieren die Datei "execute.bat" mit Doppelklick ausführen. Sobald das Terminalfenster wieder verschwindet, ist die Konvertierung abgeschlossen. Das Script legt pro osm-Datei vier svg-Dateien im convert-Ordner an. Je eine Datei nur mit Straßen, Gebäuden und Wasser und dazu eine Datei mit allen layern kombiniert.
 
 ### Farben anpassen
 Falls dir die Farben der einzelnen Elemente nicht zusagen, kannst du dich Farben in der Datei "map_to_svg.xsl" anpassen. Hier in den markierten Zeilen die Werte hinter select anpassen.

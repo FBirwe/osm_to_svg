@@ -59,7 +59,7 @@
     
 
     <xsl:template name="building">
-        <svg:polygon fill="{$COLOR_BUILDING}">
+        <polygon fill="{$COLOR_BUILDING}">
             <xsl:attribute name="points">
                 <xsl:for-each select="./nd">
                     <xsl:variable name="nd_ref" select="@ref" />
@@ -69,7 +69,7 @@
                     <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
                 </xsl:for-each>
             </xsl:attribute>
-        </svg:polygon>
+        </polygon>
     </xsl:template>
 
     <xsl:template name="street">
@@ -84,7 +84,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <svg:polyline fill="none" stroke="{$COLOR_STREET}" stroke-width="{$stroke_width}">
+        <polyline fill="none" stroke="{$COLOR_STREET}" stroke-width="{$stroke_width}">
             <xsl:attribute name="street_name">
                 <xsl:value-of select="./tag[@k='name']/@v" />
             </xsl:attribute>
@@ -97,11 +97,11 @@
                     <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
                 </xsl:for-each>
             </xsl:attribute>
-        </svg:polyline>
+        </polyline>
     </xsl:template>
 
     <xsl:template name="waterway">
-        <svg:polyline fill="none" stroke="{$COLOR_WATER}" stroke-width="5px">
+        <polyline fill="none" stroke="{$COLOR_WATER}" stroke-width="5px">
             <xsl:attribute name="points">
                 <xsl:for-each select="./nd">
                     <xsl:variable name="nd_ref" select="@ref" />
@@ -111,12 +111,12 @@
                     <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
                 </xsl:for-each>
             </xsl:attribute>
-        </svg:polyline>
+        </polyline>
     </xsl:template>
 
 
     <xsl:template name="water">
-        <svg:polygon fill="{$COLOR_WATER}">
+        <polygon fill="{$COLOR_WATER}">
             <xsl:attribute name="points">
                 <xsl:for-each select="./nd">
                     <xsl:variable name="nd_ref" select="@ref" />
@@ -126,7 +126,7 @@
                     <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
                 </xsl:for-each>
             </xsl:attribute>
-        </svg:polygon>
+        </polygon>
     </xsl:template>
 
 
