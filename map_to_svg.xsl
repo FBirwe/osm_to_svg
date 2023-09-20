@@ -1,7 +1,4 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:svg="http://www.w3.org/2000/svg"
-
->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/2000/svg">
 
   <xsl:output method="xml"/>
   <xsl:param name="target" select="'all'"/>
@@ -28,7 +25,6 @@
     <svg
         width="{ ($max_long - $min_long) * $SCALE }"
         height="{ ($max_lat - $min_lat) * $SCALE }"
-        xmlns="http://www.w3.org/2000/svg"
     >
         <xsl:apply-templates select="//way">
             <xsl:with-param name="target" select="$target" />
@@ -66,7 +62,7 @@
                     <xsl:variable name="max_lat" select="/osm/bounds/@maxlat" />
                     <xsl:variable name="min_long" select="/osm/bounds/@minlon" />
 
-                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
+                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:value-of select="'&#x20;'"></xsl:value-of>
                 </xsl:for-each>
             </xsl:attribute>
         </polygon>
@@ -94,7 +90,7 @@
                     <xsl:variable name="max_lat" select="/osm/bounds/@maxlat" />
                     <xsl:variable name="min_long" select="/osm/bounds/@minlon" />
 
-                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
+                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:value-of select="'&#x20;'"></xsl:value-of>
                 </xsl:for-each>
             </xsl:attribute>
         </polyline>
@@ -108,7 +104,7 @@
                     <xsl:variable name="max_lat" select="/osm/bounds/@maxlat" />
                     <xsl:variable name="min_long" select="/osm/bounds/@minlon" />
 
-                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
+                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:value-of select="'&#x20;'"></xsl:value-of>
                 </xsl:for-each>
             </xsl:attribute>
         </polyline>
@@ -123,7 +119,7 @@
                     <xsl:variable name="max_lat" select="/osm/bounds/@maxlat" />
                     <xsl:variable name="min_long" select="/osm/bounds/@minlon" />
 
-                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:text> </xsl:text>
+                    <xsl:value-of select="(//node[@id=$nd_ref]/@lon - $min_long) * $SCALE" />,<xsl:value-of select="( $max_lat - //node[@id=$nd_ref]/@lat) * $SCALE" /><xsl:value-of select="'&#x20;'"></xsl:value-of>
                 </xsl:for-each>
             </xsl:attribute>
         </polygon>
